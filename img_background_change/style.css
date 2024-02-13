@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100wh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+}
+
+.img-box{
+    width: 60%;
+    line-height: 0;
+    margin: auto;
+    background-image: url(img/background.png);
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrap{
+    width: 20%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+span{
+    width: 1px;
+    height: 100%;
+    cursor: ew-resize;
+    background-color: #fff;
+    position: absolute;
+    left: 20px;
+    top: 0;
+}
+
+.arrow{
+    width:40px;
+    position: absolute;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+}

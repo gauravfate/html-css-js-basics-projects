@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="style.css">
+    <title>Toast Notification</title>
+</head>
+<body>
+    
+    <div class="btn-container">
+        <button onclick="notification(succesMsg)">Succesful</button>
+        <button onclick="notification(worningMsg)">Warning</button>
+        <button onclick="notification(failedMsg)">Error</button>
+    </div>
+
+    <div id="notification">
+
+    </div>
+
+
+    <script>
+
+        let notificationDiv = document.getElementById("notification");
+        
+        const succesMsg = ` <i class="ri-checkbox-circle-fill"></i> Process Is Succesful !`;
+        const worningMsg = ` <i class="ri-error-warning-fill"></i> Something is wrong`;
+        const failedMsg = `<i class="ri-close-circle-fill"></i>Process Is Failed !`;
+        
+        function notification(msg){
+            let noti = document.createElement("div");
+
+            noti.classList.add("toast");
+            noti.innerHTML = msg;
+
+            notificationDiv.appendChild(noti);
+            
+            if(msg.includes("wrong")){
+                noti.classList.add("wrong");
+            }
+            if(msg.includes("Failed")){
+                noti.classList.add("fail");
+            }
+
+            setTimeout(() => {
+                noti.remove();
+            }, 5000);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="box">
+
+            <div id="left">
+                <p class="list" draggable="true">box-1</p>
+                <p class="list" draggable="true">box-2</p>
+                <p class="list" draggable="true">box-3</p>
+                <p class="list" draggable="true">box-4</p>
+            </div>
+            
+            <div id="right">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let lists = document.getElementsByClassName("list");
+        let right = document.getElementById("right");
+        let left = document.getElementById("left");
+
+        for(list of lists){ 
+
+            list.addEventListener("dragstart", (e) => {
+                let selected = e.target;
+
+                right.addEventListener("dragover", (e) => {
+                    e.preventDefault();
+                });
+                right.addEventListener("drop", (e) => {
+                    right.appendChild(selected);
+                    selected = null;                //null is bcz we are getting new tag each time
+                });
+
+                left.addEventListener("dragover", (e) => {
+                    e.preventDefault();
+                });
+                left.addEventListener("drop", (e) => {
+                    left.appendChild(selected);
+                    selected = null;
+                });
+            });
+        }
+
+    </script>
+</body>
+</html>

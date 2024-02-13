@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .clock {
+        font-size: 10vh;
+        font-family: 'Orbitron', sans-serif;
+        border: 2px solid red;
+        padding: 15px;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <span class="clock">1:31 AM</span>
+
+    </div>
+
+
+    <script>
+
+        const getTime = () => {
+            let d = new Date();
+
+            // let h = d.getHours();
+
+            // let amPm = h >= 12 ? "PM" : "AM";
+
+            // h = h % 12;
+
+            // h = h == 0 ? 12 : h;
+
+            // let m = d.getMinutes();
+
+            // let s = d.getSeconds();
+            // s = s < 9 ? "0" +  s : s
+
+            // return `${h} : ${m} : ${s} ${amPm}`
+
+            return d.toLocaleTimeString();
+        }
+
+        setInterval(() => {
+            // console.log(getTime());
+            let clockOb = document.querySelector('.clock');
+
+            clockOb.innerHTML = getTime();
+
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>

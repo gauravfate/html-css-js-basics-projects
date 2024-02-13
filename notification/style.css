@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:antiquewhite;
+}
+
+.btn-container{
+    margin: 80px;
+}
+.btn-container button{
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+#notification{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.toast{
+    background-color: #fff;
+    color: black;
+    font-weight: 500;
+    font-size: 17px;
+    width: 400px;
+    height: 50px;
+    padding: 30px 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); */
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards ;
+}
+
+@keyframes moveleft{
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.toast i{
+    margin: 0 10px;
+    color: green;
+    font-size: 20px;
+}
+
+.toast.wrong i{
+    color: orange;
+}
+
+.toast.fail i{
+    color: red;
+}
+
+.toast::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: green;
+    animation: decrease 5s linear forwards;
+}
+
+@keyframes decrease{
+    100%{
+        width: 0;
+    }
+}  
+
+.toast.wrong ::after{
+    background-color: orange;
+}
+.toast.fail::after{
+    background-color: red;
+}

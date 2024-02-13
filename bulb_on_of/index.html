@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Of Project</title>
+
+    <style>
+        img {
+            width: 100px;
+            display: block;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Its Bulp</h1>
+    <button onclick="onn()" id="on">Turn On</button>
+    <button onclick="of()" id="off">Turn Off</button>
+    <button onclick="tgl()" id="on-of">On</button>
+
+    <img id="bulb" src="img/Off.png" alt="off">
+
+
+    <!-- js Script -->
+    <script>
+
+
+        const img = document.getElementById("bulb");
+        function onn() {
+            img.src = "img/On.png";     //method one
+        }
+
+        function of() {
+            const img = document.getElementById("bulb");
+
+            img.setAttribute("src", "img/Off.png");     //method second
+        }
+
+        function tgl() {
+            let img = document.getElementById("bulb");
+            let srcOb = img.getAttribute("src");
+
+            if (srcOb == "img/Off.png") {
+                onn();
+                let text = document.getElementById("on-of");
+                text.innerHTML = "Off";
+            } else {
+                of();
+                let text = document.getElementById("on-of");
+                text.innerHTML = "On";
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>

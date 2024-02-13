@@ -1,0 +1,47 @@
+<!-- drop down menu -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Drow Dwan Menu</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="selector">
+            <p id="selectField">Select The Option</p>
+        </div>
+        <ul id="list" class="hide">
+            <li class="options">Instagram</li>
+            <li class="options">Facebook</li>
+            <li class="options">Linkedin</li>
+            <li class="options">Whatsapp</li>
+            <li class="options">Telegram</li>
+        </ul>
+    </div>
+
+    <script>
+
+        let selector = document.querySelector(".selector");    
+        let selectField = document.getElementById("selectField");    
+        let options = document.getElementsByClassName("options");
+        let list = document.getElementById("list");
+
+        for(option of options) {
+            option.onclick = function() {
+                selectField.innerHTML = this.textContent;
+                list.classList.add("hide");
+            }
+        }
+
+        selector.onclick = ()=>{
+            list.classList.toggle("hide");
+        }
+
+
+    </script>
+
+</body>
+</html>

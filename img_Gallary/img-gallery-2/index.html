@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <style>
+
+        body{
+            background-color: rgb(43, 42, 42);
+            height: 100vh;
+        }
+
+        .gallery{
+            width: 30%;
+            height: 250px;
+            display: flex;
+            position: absolute;
+            top: 40%;
+            gap: 3px;
+        }
+
+        .gallery img{
+            width: 12%;
+            object-fit: cover;
+            border-radius: 9px;
+            border: 2px solid white;
+            cursor:pointer;
+            transition: all 1s;
+        }
+
+        .gallery img:hover{
+            width: 100%;
+            /* transform: translateY(-20px); */
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="gallery">
+        <img src="img/img-1.jpg" alt="">
+        <img src="img/img-2.jpg" alt="">
+        <img src="img/img-3.jpg" alt="">
+        <img src="img/img-4.png" alt="">
+        <img src="img/img-5.jpg" alt="">
+        <img src="img/spiderman-7059658_1280.jpg" alt="">
+        <img src="img/thunderstorm-4234254_1280.jpg" alt="">
+        <!-- <img src="img/woman-8035746_1280.jpg" alt=""> -->
+    </div>
+    
+</body>
+</html>
